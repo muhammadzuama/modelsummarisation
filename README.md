@@ -1,6 +1,38 @@
 # modelsummarisation
 ---
 ---
+Tentu, ini kode HTML untuk menambahkan link Google Colab ke README.md Anda. Anda bisa menempatkannya di bagian mana pun yang relevan, misalnya di bagian "Penggunaan" atau "Akses Proyek".
+
+Berikut adalah contoh file **README.md** yang bisa kamu gunakan untuk proyek tersebut:
+
+---
+
+# 🚀 Proyek Google Colab
+
+## 📌 Deskripsi Singkat
+
+Proyek ini dapat dijalankan langsung di Google Colab untuk memudahkan eksekusi dan eksplorasi kode tanpa perlu setup lokal. Cukup klik link di bawah untuk memulai.
+
+## 🔗 Akses Cepat ke Google Colab
+
+Anda dapat menjalankan proyek ini langsung di Google Colab dengan mengklik tautan berikut:
+
+👉 [Buka di Google Colab](https://colab.research.google.com/drive/160Y8aw3kF8jqRyhLB_5BhGaPWc1KkDPS?usp=sharing)
+
+## 🛠️ Cara Menggunakan
+
+1. Klik link di atas untuk membuka notebook di Google Colab.
+2. Jalankan setiap sel kode satu per satu, mulai dari atas.
+3. Pastikan Anda sudah login ke akun Google Anda untuk menyimpan salinan notebook jika ingin mengeditnya.
+
+## 📋 Catatan
+
+* Pastikan runtime Anda diatur ke **GPU** jika notebook membutuhkan akselerasi perangkat keras.
+* Jika Anda mengalami error, periksa kembali apakah semua dependensi telah terinstall atau jalankan ulang runtime.
+
+---
+
+Silakan modifikasi bagian deskripsi jika proyekmu memiliki fungsi atau tujuan spesifik. Kalau butuh tambahan seperti instalasi library, badge, atau petunjuk lanjutan, saya bisa bantu juga.
 
 ## Pelatihan Model
 
