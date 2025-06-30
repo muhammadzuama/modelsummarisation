@@ -1,6 +1,5 @@
 # modelsummarisation
 ---
----
 Tentu, ini kode HTML untuk menambahkan link Google Colab ke README.md Anda. Anda bisa menempatkannya di bagian mana pun yang relevan, misalnya di bagian "Penggunaan" atau "Akses Proyek".
 
 Berikut adalah contoh file **README.md** yang bisa kamu gunakan untuk proyek tersebut:
