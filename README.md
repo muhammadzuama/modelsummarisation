@@ -1,6 +1,55 @@
 # modelsummarisation
 ---
+---
 
+## Pelatihan Model
+
+Proyek ini telah dilatih menggunakan dataset **Liputan6 Summary**, sebuah dataset ringkasan teks berbahasa Indonesia yang komprehensif. Proses pelatihan dilakukan di **Google Colab** dengan dukungan **GPU**, memanfaatkan akselerasi perangkat keras untuk efisiensi yang lebih baik.
+
+### Konfigurasi dan Performa Pelatihan
+
+Kami melakukan eksperimen pelatihan dengan beberapa konfigurasi *batch size* dan presisi untuk mengoptimalkan waktu pelatihan dan performa model:
+
+#### Konfigurasi 1: Performa Terbaik
+
+Dengan konfigurasi ini, model menunjukkan performa terbaik dalam hal kecepatan pelatihan dan skor evaluasi:
+
+* **`per_device_train_batch_size=4`**
+* **`per_device_eval_batch_size=4`**
+* **`fp16=True`**: Penggunaan *mixed precision* (presisi campuran) diaktifkan. Fitur ini sangat efektif pada GPU modern seperti NVIDIA T4, V100, atau A100. Dengan `fp16=True`, model menggunakan tipe data *floating-point* 16-bit, yang secara signifikan **mempercepat pelatihan** tanpa mengorbankan akurasi secara drastis.
+
+**Hasil Pelatihan:**
+
+* **Progres:** `[7500/7500 33:42, Epoch 3/3]`
+* **Waktu Pelatihan Total:** 33 menit 42 detik
+* **Evaluasi ROUGE (pada 1000 data test sample):**
+    * `rouge1`: 38.52%
+    * `rouge2`: 22.51%
+    * `rougeL`: 34.40%
+    * `rougeLsum`: 34.49%
+
+#### Konfigurasi 2: Baseline (Perbandingan)
+
+Sebagai perbandingan, kami juga menguji konfigurasi dengan *batch size* yang lebih besar tanpa `fp16`:
+
+* **`per_device_train_batch_size=8`**
+* **`per_device_eval_batch_size=8`**
+
+**Hasil Pelatihan:**
+
+* **Progres:** `Epoch 3` (detail langkah tidak dicatat, tetapi untuk 3 *epoch* penuh)
+* **Waktu Pelatihan Total:** Sekitar 1 jam
+* **Evaluasi ROUGE (pada 500 data test sample):**
+    * `rouge1`: 32.94%
+    * `rouge2`: 18.52%
+    * `rougeL`: 29.60%
+    * `rougeLsum`: 29.65%
+
+**Kesimpulan:**
+
+Dari hasil di atas, jelas bahwa penggunaan `per_device_train_batch_size=4` dikombinasikan dengan `fp16=True` secara signifikan **mempercepat proses pelatihan** (dari sekitar 1 jam menjadi 33 menit 42 detik) dan juga **menghasilkan skor evaluasi ROUGE yang lebih tinggi**. Peningkatan ini menunjukkan bahwa kombinasi *batch size* yang lebih kecil dan *mixed precision* optimal untuk model ini di lingkungan Google Colab dengan GPU yang kompatibel.
+
+---
 ## Instalasi
 
 Untuk menyiapkan lingkungan Anda, ikuti langkah-langkah berikut:
