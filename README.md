@@ -147,4 +147,3 @@ model = model.to(device) # Memindahkan model ke GPU jika tersedia.
 
 -----
 
----
